@@ -11,12 +11,18 @@
         </div>
         <ul class="nav">
             <li class="active ">
-                <a href="./dashboard.html">
+                <a href="{{ route('admin-dashboard') }}">
                     <i class="tim-icons icon-chart-pie-36"></i>
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li>
+            <li class="active ">
+                <a href="./dashboard.html">
+                    <i class="tim-icons icon-notes"></i>
+                    <p>Data Posyandu</p>
+                </a>
+            </li>
+            {{-- <li>
                 <a href="./icons.html">
                     <i class="tim-icons icon-atom"></i>
                     <p>Icons</p>
@@ -63,7 +69,7 @@
                     <i class="tim-icons icon-spaceship"></i>
                     <p>Upgrade to PRO</p>
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </div>
