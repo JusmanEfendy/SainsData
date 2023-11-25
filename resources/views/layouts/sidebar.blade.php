@@ -17,7 +17,7 @@
                 </a>
             </li>
             <li class="active ">
-                <a href="./dashboard.html">
+                <a href="{{ route('tabel-stunting') }}">
                     <i class="tim-icons icon-notes"></i>
                     <p>Data Posyandu</p>
                 </a>
