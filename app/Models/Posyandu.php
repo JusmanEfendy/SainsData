@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Posyandu extends Model
 {
     use HasFactory;
+
+    public $timestamps = true;
+
+    protected $table = 'posyandu';
+    protected $primaryKey = 'id';
+
+    protected $fillable = ['kode_posyandu', 'nama_posyandu'];
 }
