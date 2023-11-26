@@ -1,5 +1,6 @@
 @include('layouts.header')
 <title>{{ $title }}</title>
+
 <body class="">
     <div class="wrapper">
 
@@ -29,7 +30,8 @@
                             <div class="card ">
                                 <div class="card-header">
                                     <h4 class="card-title"> Simple Table</h4>
-                                    <a href="{{ route('posyandu.create') }}" class="btn btn-fill btn-primary">Add data +</a>
+                                    <a href="{{ route('posyandu.create') }}" class="btn btn-fill btn-primary">Add data
+                                        +</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -158,11 +160,8 @@
                     </div>
                 </div>
             </div>
+            @include('layouts.footer')
         </div>
-
-        @include('layouts.footer')
-
-    </div>
     </div>
     <div class="fixed-plugin">
         <div class="dropdown show-dropdown">
