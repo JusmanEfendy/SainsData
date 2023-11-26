@@ -32,14 +32,6 @@
                                     <h4 class="card-title"> Tabel Stunting</h4>
                                     <a href="{{ route('posyandu.create') }}" class="btn btn-fill btn-primary">Add data
                                         +</a>
-                                        <div class="card-tools">
-                                            <div class="input-group input-group-sm" style="width: 150px;">
-                                                <form action="" method="get">
-                                                    <input type="search" id="search" name="search" class="form-control float-right"
-                                                    placeholder="Search">
-                                                </form>   
-                                            </div>
-                                        </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
