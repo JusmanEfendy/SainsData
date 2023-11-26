@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PosyanduController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,8 @@ Route::middleware('auth')->group(function () {
 
     // DASHBOARD
     Route::get('admin-dashboard', [DashboardController::class, 'index'])->name('admin-dashboard');
+    // TABLES
+    Route::get('tabel-stunting', [PosyanduController::class, 'index'])->name('tabel-stunting');
 });
 
 require __DIR__.'/auth.php';
