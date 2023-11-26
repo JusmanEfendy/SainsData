@@ -22,8 +22,6 @@ return new class extends Migration
             $table->char('posyandu', 50);
             $table->char('asal_desa', 50);
             $table->string('usia_ukur', 30);
-
-            $table->
             $table->timestamps();
             $table->date('created_at');
         });
