@@ -29,7 +29,7 @@
                         <div class="col-md-12">
                             <div class="card ">
                                 <div class="card-header">
-                                    <h4 class="card-title"> Simple Table</h4>
+                                    <h4 class="card-title"> Tabel Stunting</h4>
                                     <a href="{{ route('posyandu.create') }}" class="btn btn-fill btn-primary">Add data
                                         +</a>
                                 </div>
