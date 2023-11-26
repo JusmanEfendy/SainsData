@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Stunting;
 use Illuminate\Http\Request;
 
 class PosyanduController extends Controller
@@ -9,7 +10,8 @@ class PosyanduController extends Controller
     public function index()
     {
         $title = 'Data stunting';
-        return view('admin.posyandu.index', compact('title'));
+        $datas = Stunting::orderBy('id', 'desc')->paginate(5);
+        return view('admin.posyandu.index', compact('title', 'datas'));
 
     }
 
