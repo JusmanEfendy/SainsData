@@ -31,8 +31,10 @@ Route::middleware('auth')->group(function () {
 
     // DASHBOARD
     Route::get('admin-dashboard', [DashboardController::class, 'index'])->name('admin-dashboard');
-    // TABLES
-    Route::get('tabel-stunting', [PosyanduController::class, 'index'])->name('tabel-stunting');
+
+    // POSYANDU
+    Route::get('posyandu', [PosyanduController::class, 'index'])->name('posyandu');
+    Route::get('posyandu/create', [PosyanduController::class, 'create'])->name('posyandu.create');
 });
 
 require __DIR__.'/auth.php';

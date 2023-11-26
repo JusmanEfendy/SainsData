@@ -9,7 +9,13 @@ class PosyanduController extends Controller
     public function index()
     {
         $title = 'Data stunting';
-        return view('admin.tables.posyandu', compact('title'));
+        return view('admin.posyandu.index', compact('title'));
 
+    }
+
+    public function create()
+    {
+        $title = 'Tambah Data';
+        return view('admin.posyandu.create', compact('title'));
     }
 }
