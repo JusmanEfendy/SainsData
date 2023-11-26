@@ -57,7 +57,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-navbar">
                         <li class="nav-link"><a href="javascript:void(0)"
-                                class="nav-item dropdown-item">Profile</a></li>
+                                class="nav-item dropdown-item">Profile ({{ Auth::user()->name }})</a></li>
                         <li class="nav-link"><a href="javascript:void(0)"
                                 class="nav-item dropdown-item">Settings</a></li>
                         <li class="dropdown-divider"></li>
