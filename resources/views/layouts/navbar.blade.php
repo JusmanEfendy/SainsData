@@ -53,7 +53,7 @@
                         </div>
                         <b class="caret d-none d-lg-block d-xl-block"></b>
                         <p class="d-lg-none">
-                            Log out
+                            {{ Auth::user()->name }}
                         </p>
                     </a>
                     <ul class="dropdown-menu dropdown-navbar">
