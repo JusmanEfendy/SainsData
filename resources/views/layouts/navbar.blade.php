@@ -8,7 +8,8 @@
                     <span class="navbar-toggler-bar bar3"></span>
                 </button>
             </div>
-            <a class="navbar-brand" href="{{ route('admin-dashboard') }}">{{ isset($navbarBrand) ? $navbarBrand : 'Dashboard' }}</a>
+            <a class="navbar-brand"
+                href="{{ route('admin-dashboard') }}">{{ isset($navbarBrand) ? $navbarBrand : 'Dashboard' }}</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -19,8 +20,8 @@
         <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto">
                 <li class="search-bar input-group">
-                    <button class="btn btn-link" id="search-button" data-toggle="modal"
-                        data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i>
+                    <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i
+                            class="tim-icons icon-zoom-split"></i>
                         <span class="d-lg-none d-md-block">Search</span>
                     </button>
                 </li>
@@ -37,12 +38,12 @@
                                 responded to your email</a></li>
                         <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">You
                                 have 5 more tasks</a></li>
-                        <li class="nav-link"><a href="javascript:void(0)"
-                                class="nav-item dropdown-item">Your friend Michael is in town</a></li>
-                        <li class="nav-link"><a href="javascript:void(0)"
-                                class="nav-item dropdown-item">Another notification</a></li>
-                        <li class="nav-link"><a href="javascript:void(0)"
-                                class="nav-item dropdown-item">Another one</a></li>
+                        <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Your friend
+                                Michael is in town</a></li>
+                        <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Another
+                                notification</a></li>
+                        <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Another one</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="dropdown nav-item">
@@ -56,13 +57,21 @@
                         </p>
                     </a>
                     <ul class="dropdown-menu dropdown-navbar">
-                        <li class="nav-link"><a href="javascript:void(0)"
+                        <li class="nav-link"><a href="{{ route('profile.edit') }}"
                                 class="nav-item dropdown-item">Profile ({{ Auth::user()->name }})</a></li>
-                        <li class="nav-link"><a href="javascript:void(0)"
-                                class="nav-item dropdown-item">Settings</a></li>
+                        <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a>
+                        </li>
                         <li class="dropdown-divider"></li>
-                        <li class="nav-link"><a href="javascript:void(0)"
-                                class="nav-item dropdown-item">Log out</a></li>
+                        {{-- <li class="nav-link"><a href="{{ route('logout') }}"
+                                class="nav-item dropdown-item">Log out</a></li> --}}
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <li class="nav-link">
+                                <a class="nav-item dropdown-item" href="keluar"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">Logout</a>
+                            </li>
+                        </form>
                     </ul>
                 </li>
                 <li class="separator d-lg-none"></li>

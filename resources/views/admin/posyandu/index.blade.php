@@ -35,20 +35,23 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table class="table tablesorter table-bordered table-hover" id="">
+                                        <table class="table table-hover" id="">
                                             <thead class=" text-primary">
                                                 <tr>
                                                     <th>
-                                                        Name
+                                                        Nama
                                                     </th>
                                                     <th>
-                                                        Country
+                                                        JK
                                                     </th>
                                                     <th>
-                                                        City
+                                                        Tgl Lahir
+                                                    </th>
+                                                    <th>
+                                                        Posyandu
                                                     </th>
                                                     <th class="text-center">
-                                                        Salary
+                                                        action
                                                     </th>
                                                 </tr>
                                             </thead>
@@ -63,92 +66,25 @@
                                                     <td>
                                                         Oud-Turnhout
                                                     </td>
-                                                    <td class="text-center">
-                                                        $36,738
-                                                    </td>
-                                                </tr>
-                                                <tr>
                                                     <td>
-                                                        Minerva Hooper
+                                                        Pelat
                                                     </td>
-                                                    <td>
-                                                        Curaçao
-                                                    </td>
-                                                    <td>
-                                                        Sinaai-Waas
-                                                    </td>
-                                                    <td class="text-center">
-                                                        $23,789
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        Sage Rodriguez
-                                                    </td>
-                                                    <td>
-                                                        Netherlands
-                                                    </td>
-                                                    <td>
-                                                        Baileux
-                                                    </td>
-                                                    <td class="text-center">
-                                                        $56,142
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        Philip Chaney
-                                                    </td>
-                                                    <td>
-                                                        Korea, South
-                                                    </td>
-                                                    <td>
-                                                        Overland Park
-                                                    </td>
-                                                    <td class="text-center">
-                                                        $38,735
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        Doris Greene
-                                                    </td>
-                                                    <td>
-                                                        Malawi
-                                                    </td>
-                                                    <td>
-                                                        Feldkirchen in Kärnten
-                                                    </td>
-                                                    <td class="text-center">
-                                                        $63,542
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        Mason Porter
-                                                    </td>
-                                                    <td>
-                                                        Chile
-                                                    </td>
-                                                    <td>
-                                                        Gloucester
-                                                    </td>
-                                                    <td class="text-center">
-                                                        $78,615
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        Jon Porter
-                                                    </td>
-                                                    <td>
-                                                        Portugal
-                                                    </td>
-                                                    <td>
-                                                        Gloucester
-                                                    </td>
-                                                    <td class="text-center">
-                                                        $98,615
+                                                    <td class="text-center py-2">
+                                                        <button href="javascript:void(0)"
+                                                            class="btn btn-icon btn-round btn-facebook">
+                                                            <i class="tim-icons icon-pencil"></i>
+                                                        </button>
+                                                        <button href="javascript:void(0)"
+                                                            class="btn btn-icon btn-round btn-facebook">
+                                                            <i class="tim-icons icon-alert-circle-exc"></i>
+                                                        </button>
+                                                        <form class="d-inline" action="">
+                                                            @csrf
+                                                            <button type="submit"
+                                                            class="btn btn-icon btn-round btn-facebook">
+                                                            <i class="tim-icons icon-trash-simple"></i>
+                                                        </button>
+                                                        </form>
                                                     </td>
                                                 </tr>
                                             </tbody>
