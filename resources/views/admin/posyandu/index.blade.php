@@ -32,12 +32,23 @@
                                     <h4 class="card-title"> Tabel Stunting</h4>
                                     <a href="{{ route('posyandu.create') }}" class="btn btn-fill btn-primary">Add data
                                         +</a>
+                                        <div class="card-tools">
+                                            <div class="input-group input-group-sm" style="width: 150px;">
+                                                <form action="" method="get">
+                                                    <input type="search" id="search" name="search" class="form-control float-right"
+                                                    placeholder="Search">
+                                                </form>   
+                                            </div>
+                                        </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
                                         <table class="table table-hover" id="">
                                             <thead class=" text-primary">
                                                 <tr>
+                                                    <th>
+                                                        No
+                                                    </th>
                                                     <th>
                                                         Nama
                                                     </th>
@@ -56,37 +67,43 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>
-                                                        Dakota Rice
-                                                    </td>
-                                                    <td>
-                                                        Niger
-                                                    </td>
-                                                    <td>
-                                                        Oud-Turnhout
-                                                    </td>
-                                                    <td>
-                                                        Pelat
-                                                    </td>
-                                                    <td class="text-center py-2">
-                                                        <button onclick="window.location.href='{{ route('posyandu.edit') }}'"
-                                                            class="btn btn-icon btn-round btn-facebook">
-                                                            <i class="tim-icons icon-pencil"></i>
-                                                        </button>
-                                                        <button href="javascript:void(0)"
-                                                            class="btn btn-icon btn-round btn-facebook">
-                                                            <i class="tim-icons icon-alert-circle-exc"></i>
-                                                        </button>
-                                                        <form class="d-inline" action="">
-                                                            @csrf
-                                                            <button type="submit"
-                                                            class="btn btn-icon btn-round btn-facebook">
-                                                            <i class="tim-icons icon-trash-simple"></i>
-                                                        </button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
+                                                @foreach ($datas as $i => $data)
+                                                    <tr>
+                                                        <td>
+                                                            {{ ++$i }}
+                                                        </td>
+                                                        <td>
+                                                            {{ $data->nama }}
+                                                        </td>
+                                                        <td>
+                                                            {{ $data->kelamin }}
+                                                        </td>
+                                                        <td>
+                                                            {{ $data->tanggal_lahir }}
+                                                        </td>
+                                                        <td>
+                                                            {{ $data->kode_posyandu }}
+                                                        </td>
+                                                        <td class="text-center py-2">
+                                                            <button
+                                                                onclick="window.location.href='{{ route('posyandu.edit') }}'"
+                                                                class="btn btn-icon btn-round btn-facebook">
+                                                                <i class="tim-icons icon-pencil"></i>
+                                                            </button>
+                                                            <button href="javascript:void(0)"
+                                                                class="btn btn-icon btn-round btn-facebook">
+                                                                <i class="tim-icons icon-alert-circle-exc"></i>
+                                                            </button>
+                                                            <form class="d-inline" action="">
+                                                                @csrf
+                                                                <button type="submit"
+                                                                    class="btn btn-icon btn-round btn-facebook">
+                                                                    <i class="tim-icons icon-trash-simple"></i>
+                                                                </button>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
