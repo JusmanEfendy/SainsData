@@ -1,5 +1,5 @@
 @include('layouts.header')
-
+<title>{{ $title }}</title>
 <body class="">
     <div class="wrapper">
 
