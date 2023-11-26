@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table class="table tablesorter " id="">
+                                        <table class="table tablesorter table-bordered table-hover" id="">
                                             <thead class=" text-primary">
                                                 <tr>
                                                     <th>
