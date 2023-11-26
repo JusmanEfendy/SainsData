@@ -70,7 +70,7 @@
                                                         Pelat
                                                     </td>
                                                     <td class="text-center py-2">
-                                                        <button onclick="window.location.href='{{ route('admin-dashboard') }}'"
+                                                        <button onclick="window.location.href='{{ route('posyandu.edit') }}'"
                                                             class="btn btn-icon btn-round btn-facebook">
                                                             <i class="tim-icons icon-pencil"></i>
                                                         </button>

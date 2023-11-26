@@ -1,5 +1,6 @@
 @include('layouts.header')
 <title>{{ $title }}</title>
+
 <body class="">
     <div class="wrapper">
 
@@ -27,16 +28,113 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1>tambah data</h1>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2>Tambah Data</h2>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-5 pr-md-1">
+                                                <div class="form-group">
+                                                    <label for="desa">Desa (disabled)</label>
+                                                    <input type="text" name="desa" id="desa"
+                                                        class="form-control" disabled="" value="Desa Pelat">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 px-md-1">
+                                                <div class="form-group">
+                                                    <label for="posyandu">posyandu</label>
+                                                    <select name="posyandu" class="form-control">
+                                                        <option selected>posyandu</option>
+                                                        <option class="text-dark" value="posyandu1">posyandu 1</option>
+                                                        <option class="text-dark" value="posyandu2">posyandu 2</option>
+                                                        <option class="text-dark" value="posyandu3">posyandu 3</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 pl-md-1">
+                                                <div class="form-group">
+                                                    <label for="dusun">Dusun</label>
+                                                    <select name="dusun" class="form-control">
+                                                        <option selected>Dusun</option>
+                                                        <option class="text-dark" value="dusun1">Dusun 1</option>
+                                                        <option class="text-dark" value="dusun2">Dusun 2</option>
+                                                        <option class="text-dark" value="dusun3">Dusun 3</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 pr-md-1">
+                                                <div class="form-group">
+                                                    <label for="nama">Nama Balita</label>
+                                                    <input type="text" name="nama" class="form-control"
+                                                        placeholder="Nama Lengkap...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 pl-md-1">
+                                                <div class="form-group">
+                                                    <label for="ortu">Nama Ortu (Ibu)</label>
+                                                    <input name="ortu" type="text" class="form-control"
+                                                        placeholder="Nama Ibu...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="alamat">Alamat Lengkap</label>
+                                                    <input name="alamat" type="text" class="form-control"
+                                                        placeholder="alamat lengkap..">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4 pr-md-1">
+                                                <div class="form-group">
+                                                    <label>Jenis Kelamin</label>
+                                                    <div class="form-check ml-3">
+                                                        <input class="form-check-input" type="radio" name="gender"
+                                                            id="male" value="male">
+                                                        <label class="form-check-label" for="male">
+                                                            Laki-laki
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check ml-3">
+                                                        <input class="form-check-input" type="radio" name="gender"
+                                                            id="female" value="female">
+                                                        <label class="form-check-label" for="female">
+                                                            Perempuan
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 px-md-1">
+                                                <div class="form-group">
+                                                    <label for="tanggalLahir">Tanggal Lahir</label>
+                                                    <input name="tanggalLahir" type="date" class="form-control" name="dob">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 pl-md-1">
+                                                <div class="form-group">
+                                                    <label for="usiaUkur">Usia Saat Ukur</label>
+                                                    <input name="usiaUkur" id="usiaUkur" type="number" class="form-control" placeholder="Usia Saat Ukur" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-fill btn-primary"><i class="tim-icons icon-notes"></i> Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            @include('layouts.footer')
         </div>
-
-        @include('layouts.footer')
-
-    </div>
     </div>
     <div class="fixed-plugin">
         <div class="dropdown show-dropdown">

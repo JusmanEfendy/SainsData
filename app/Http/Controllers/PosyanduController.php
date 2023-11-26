@@ -18,4 +18,10 @@ class PosyanduController extends Controller
         $title = 'Tambah Data';
         return view('admin.posyandu.create', compact('title'));
     }
+
+    public function edit()
+    {
+        $title = 'Edit Data';
+        return view('admin.posyandu.edit', compact('title'));
+    }
 }
