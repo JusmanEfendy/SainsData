@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('kode_posyandu');
             $table->string('kode_dusun');
             $table->string('usia_ukur')->nullable();
+            $table->timestamps();
 
             $table->foreign('kode_posyandu')->references('kode_posyandu')->on('posyandu');
             $table->foreign('kode_dusun')->references('kode_dusun')->on('dusun');
