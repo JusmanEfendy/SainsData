@@ -70,7 +70,7 @@
                                                         Pelat
                                                     </td>
                                                     <td class="text-center py-2">
-                                                        <button href="javascript:void(0)"
+                                                        <button onclick="window.location.href='{{ route('admin-dashboard') }}'"
                                                             class="btn btn-icon btn-round btn-facebook">
                                                             <i class="tim-icons icon-pencil"></i>
                                                         </button>
