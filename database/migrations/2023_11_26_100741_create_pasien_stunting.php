@@ -20,8 +20,8 @@ return new class extends Migration
             $table->date('tanggal_lahir');
             $table->char('nama_ortu', 30);
             $table->char('posyandu', 50);
-            $table->char('asal_desa');
-            $table->string('usia_ukur');
+            $table->char('asal_desa', 50);
+            $table->string('usia_ukur', 30);
 
             $table->
             $table->timestamps();
