@@ -77,19 +77,26 @@
                                                             {{ $data->kode_posyandu }}
                                                         </td>
                                                         <td class="text-center py-2">
+                                                            <button data-target="#exampleModal" type="submit"
+                                                                data-toggle="modal"
+                                                                class="btn btn-icon btn-round btnStunting"
+                                                                data-nama="{{ $data->nama }}"
+                                                                data-nama_ortu="{{ $data->nama_ortu }}"
+                                                                data-kelamin="{{ $data->kelamin }}"
+                                                                data-tanggal_lahir="{{ $data->tanggal_lahir }}"
+                                                                data-dusun="{{ $data->kode_dusun }}"
+                                                                data-posyandu="{{ $data->kode_posyandu }}"
+                                                                data-usia_ukur="{{ $data->usia_ukur }}">
+                                                                <i class="tim-icons icon-alert-circle-exc"></i>
+                                                            </button>
                                                             <button
                                                                 onclick="window.location.href='{{ route('posyandu.edit') }}'"
-                                                                class="btn btn-icon btn-round btn-facebook">
+                                                                class="btn btn-icon btn-round">
                                                                 <i class="tim-icons icon-pencil"></i>
-                                                            </button>
-                                                            <button href="javascript:void(0)"
-                                                                class="btn btn-icon btn-round btn-facebook">
-                                                                <i class="tim-icons icon-alert-circle-exc"></i>
                                                             </button>
                                                             <form class="d-inline" action="">
                                                                 @csrf
-                                                                <button type="submit"
-                                                                    class="btn btn-icon btn-round btn-facebook">
+                                                                <button type="submit" class="btn btn-icon btn-round">
                                                                     <i class="tim-icons icon-trash-simple"></i>
                                                                 </button>
                                                             </form>
@@ -98,6 +105,69 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
+                                        <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title" id="exampleModalLabel">Detail balita
+                                                            stunting Desa Pelat</h4>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <b>Nama Balita</b>
+                                                            </div>
+                                                            <div class="col-6" id="namaBalita"></div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <b>Nama Ibu</b>
+                                                            </div>
+                                                            <div class="col-6" id="namaOrtu"></div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <b>Kelompok Posyandu</b>
+                                                            </div>
+                                                            <div class="col-6" id="posyandu"></div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <b>Dusun</b>
+                                                            </div>
+                                                            <div class="col-6" id="dusun"></div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <b>Tanggal Lahir</b>
+                                                            </div>
+                                                            <div class="col-6" id="tanggalLahir"></div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <b>Jenis Kelamin</b>
+                                                            </div>
+                                                            <div class="col-6" id="jenisKelamin"></div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <b>Usia Saat Ukur</b>
+                                                            </div>
+                                                            <div class="col-6" id="usiaUkur"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-outline-primary"
+                                                            data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -156,6 +226,37 @@
     </div>
     <!--   Core JS Files   -->
     @include('layouts.script')
+
+    <script>
+        $(".btnStunting").on("click", function(e) {
+            e.preventDefault()
+
+            let jenisKelamin = $(this).data('kelamin');
+            let ubahValue = ''
+
+            if (jenisKelamin === 'L') {
+                ubahValue = 'Laki-laki';
+            } else if (jenisKelamin === 'P') {
+                ubahValue = 'Perempuan';
+            } else {
+                ubahValue = 'Tidak diketahui';
+            }
+
+            $('#namaBalita').text($(this).data('nama'))
+
+            $('#namaOrtu').text($(this).data('nama_ortu'))
+
+            $('#posyandu').text($(this).data('posyandu'))
+
+            $('#dusun').text($(this).data('dusun'))
+
+            $('#tanggalLahir').text($(this).data('tanggal_lahir'))
+
+            $('#jenisKelamin').text(ubahValue)
+
+            $('#usiaUkur').text($(this).data('usia_ukur'))
+        })
+    </script>
 </body>
 
 </html>
