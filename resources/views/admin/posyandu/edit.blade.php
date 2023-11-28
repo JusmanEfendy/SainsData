@@ -27,6 +27,10 @@
             <div class="content">
                 <div class="container">
                     <div class="row">
+                        <div class="col-md-4 mb-2">
+                            <a href="{{ route('posyandu') }}" type="submit" class="btn btn-info text-white "><i
+                                class="tim-icons icon-minimal-left"></i> Kembali</a>
+                        </div>
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
@@ -90,7 +94,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="alamat">Alamat Lengkap</label>
+                                                    <label for="alamat">Alamat Lengkap (opsional)</label>
                                                     <input name="alamat" type="text" class="form-control"
                                                         placeholder="alamat lengkap..">
                                                 </div>
