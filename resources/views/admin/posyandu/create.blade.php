@@ -27,6 +27,10 @@
             <div class="content">
                 <div class="container">
                     <div class="row">
+                        <div class="col-md-4 mb-2">
+                            <a href="{{ route('posyandu') }}" type="submit" class="btn btn-info text-white "><i
+                                class="tim-icons icon-minimal-left"></i> Kembali</a>
+                        </div>
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
@@ -46,10 +50,13 @@
                                                 <div class="form-group">
                                                     <label for="posyandu">posyandu</label>
                                                     <select name="posyandu" class="form-control">
-                                                        <option selected>posyandu</option>
-                                                        <option class="text-dark" value="posyandu1">posyandu 1</option>
-                                                        <option class="text-dark" value="posyandu2">posyandu 2</option>
-                                                        <option class="text-dark" value="posyandu3">posyandu 3</option>
+                                                        <option selected>Pilih Kelompok Posyandu</option>
+                                                        @if (isset($posyandu))
+                                                            @foreach ($posyandu as $data)
+                                                                <option class="text-dark" value="{{ $data->kode_posyandu }}">
+                                                                    {{ $data->kode_posyandu }}</option>
+                                                            @endforeach
+                                                        @endif
                                                     </select>
                                                 </div>
                                             </div>
@@ -57,10 +64,13 @@
                                                 <div class="form-group">
                                                     <label for="dusun">Dusun</label>
                                                     <select name="dusun" class="form-control">
-                                                        <option selected>Dusun</option>
-                                                        <option class="text-dark" value="dusun1">Dusun 1</option>
-                                                        <option class="text-dark" value="dusun2">Dusun 2</option>
-                                                        <option class="text-dark" value="dusun3">Dusun 3</option>
+                                                        <option selected>Pilih Dusun</option>
+                                                        @if (isset($dusun))
+                                                            @foreach ($dusun as $data)
+                                                                <option class="text-dark" value="{{ $data->kode_dusun }}">
+                                                                    {{ $data->kode_dusun }}</option>
+                                                            @endforeach
+                                                        @endif
                                                     </select>
                                                 </div>
                                             </div>
