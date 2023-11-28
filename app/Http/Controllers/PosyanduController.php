@@ -6,7 +6,6 @@ use App\Models\Dusun;
 use App\Models\Posyandu;
 use App\Models\Stunting;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 class PosyanduController extends Controller
 {
@@ -21,7 +20,11 @@ class PosyanduController extends Controller
     public function create()
     {
         $title = 'Tambah Data';
-        return view('admin.posyandu.create', compact('title'));
+
+        $posyandu = Posyandu::get();
+        $dusun = Dusun::get();
+
+        return view('admin.posyandu.create', compact('title', 'posyandu', 'dusun'));
     }
 
     public function edit($id)
