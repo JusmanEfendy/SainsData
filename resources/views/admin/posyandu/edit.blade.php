@@ -28,7 +28,116 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1>edit data</h1>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2>Edit Data</h2>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-5 pr-md-1">
+                                                <div class="form-group">
+                                                    <label for="desa">Desa (disabled)</label>
+                                                    <input type="text" name="desa" id="desa"
+                                                        class="form-control" disabled="" value="Desa Pelat">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 px-md-1">
+                                                <div class="form-group">
+                                                    <label for="posyandu">posyandu</label>
+                                                    <select name="posyandu" class="form-control">
+                                                        {{-- <option selected>{{ $datas->kode_posyandu }}</option> --}}
+                                                        @if (isset($posyandu))
+                                                            @foreach ($posyandu as $data)
+                                                                <option {{ $datas->kode_posyandu == $data->kode_posyandu ? 'selected' : '' }} class="text-dark" value="{{ $data->kode_posyandu }}">
+                                                                    {{ $data->kode_posyandu }}</option>
+                                                            @endforeach
+                                                        @endif
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 pl-md-1">
+                                                <div class="form-group">
+                                                    <label for="dusun">Dusun</label>
+                                                    <select name="dusun" class="form-control">
+                                                        @if (isset($dusun))
+                                                            @foreach ($dusun as $data)
+                                                                <option {{ $datas->kode_dusun == $data->kode_dusun ? 'selected' : '' }} class="text-dark" value="{{ $data->kode_dusun }}">
+                                                                    {{ $data->kode_dusun }}</option>
+                                                            @endforeach
+                                                        @endif
+                                                    </select>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 pr-md-1">
+                                                <div class="form-group">
+                                                    <label for="nama">Nama Balita</label>
+                                                    <input type="text" name="nama" class="form-control"
+                                                        placeholder="Nama Lengkap..." value="{{ $datas->nama }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 pl-md-1">
+                                                <div class="form-group">
+                                                    <label for="ortu">Nama Ortu (Ibu)</label>
+                                                    <input name="ortu" type="text" class="form-control"
+                                                        placeholder="Nama Ibu..." value="{{ $datas->nama_ortu }}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="alamat">Alamat Lengkap</label>
+                                                    <input name="alamat" type="text" class="form-control"
+                                                        placeholder="alamat lengkap..">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4 pr-md-1">
+                                                <div class="form-group">
+                                                    <label>Jenis Kelamin</label>
+                                                    <div class="form-check ml-3">
+                                                        <input class="form-check-input" type="radio" name="kelamin"
+                                                            id="L" value="L" {{ $datas->kelamin == 'L' ? 'checked' : '' }}>
+                                                        <label class="form-check-label" for="L">
+                                                            Laki-laki
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check ml-3">
+                                                        <input class="form-check-input" type="radio" name="kelamin"
+                                                            id="female" value="P" {{ $datas->kelamin == 'P' ? 'checked' : '' }}>
+                                                        <label class="form-check-label" for="female">
+                                                            Perempuan
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 px-md-1">
+                                                <div class="form-group">
+                                                    <label for="tanggal_lahir">Tanggal Lahir</label>
+                                                    <input name="tanggal_lahir" type="date" class="form-control"
+                                                        name="dob" value="{{ $datas->tanggal_lahir }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 pl-md-1">
+                                                <div class="form-group">
+                                                    <label for="usiaUkur">Usia Saat Ukur</label>
+                                                    <input name="usia_ukur" id="usiaUkur" type="text"
+                                                        class="form-control" placeholder="Usia Saat Ukur" value="{{ $usia_ukur->format('%y Tahun - %m Bulan - %d Hari') }}" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-fill btn-primary"><i
+                                                    class="tim-icons icon-notes"></i> Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

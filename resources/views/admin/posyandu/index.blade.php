@@ -90,7 +90,7 @@
                                                                 <i class="tim-icons icon-alert-circle-exc"></i>
                                                             </button>
                                                             <button
-                                                                onclick="window.location.href='{{ route('posyandu.edit') }}'"
+                                                                onclick="window.location.href='{{ route('posyandu.edit', $data->id) }}'"
                                                                 class="btn btn-icon btn-round">
                                                                 <i class="tim-icons icon-pencil"></i>
                                                             </button>
