@@ -94,4 +94,12 @@ class PosyanduController extends Controller
 
         return redirect()->route('posyandu')->with('success', 'Data Stunting berhasil diubah');
     }
+
+    public function destroy($id)
+    {
+        $datas = Stunting::findOrFail($id);
+
+        $datas->destroy($id);
+        return redirect()->route('posyandu');
+    }
 }
