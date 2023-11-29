@@ -29,13 +29,26 @@
                     <div class="row">
                         <div class="col-md-12">
                             @if ($errors->any())
-                            <div class="alert alert-danger">
+                            <div class="alert alert-danger " data-notify="container">
+                                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                  <i class="tim-icons icon-simple-remove"></i>
+                                </button>
+                                <span data-notify="icon" class="tim-icons icon-alert-circle-exc"></span>
+                                <span data-notify="message">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li style="list-style: none"><i class="tim-icons icon-simple-remove"></i> {{ $error }} (wajib isi)</li>
+                                        @endforeach
+                                    </ul>
+                                </span>
+                              </div>
+                            {{-- <div class="alert alert-danger">
                                 <ul>
                                     @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
+                                        <li style="list-style: none"><i class="tim-icons icon-alert-circle-exc"></i> {{ $error }}</li>
                                     @endforeach
                                 </ul>
-                            </div>
+                            </div> --}}
                         @endif
                         </div>
                         <div class="col-md-4 mb-2">
