@@ -27,6 +27,16 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
+                            @if (session('success'))
+                                <div class="alert alert-success alert-with-icon" data-notify="container">
+                                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert"
+                                        aria-label="Close">
+                                        <i class="tim-icons icon-simple-remove"></i>
+                                    </button>
+                                    <span data-notify="icon" class="tim-icons icon-check-2"></span>
+                                    <span data-notify="message">{{ session('success') }}</span>
+                                </div>
+                            @endif
                             <div class="card ">
                                 <div class="card-header">
                                     <h4 class="card-title"> Tabel Stunting</h4>
@@ -68,7 +78,7 @@
                                                             {{ $data->nama }}
                                                         </td>
                                                         <td>
-                                                            {{ $data->kelamin === 'L' ? 'Laki-laki' : 'Perempuan'}}
+                                                            {{ $data->kelamin === 'L' ? 'Laki-laki' : 'Perempuan' }}
                                                         </td>
                                                         <td>
                                                             {{ $data->tanggal_lahir }}

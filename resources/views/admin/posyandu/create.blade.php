@@ -27,6 +27,17 @@
             <div class="content">
                 <div class="container">
                     <div class="row">
+                        <div class="col-md-12">
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        </div>
                         <div class="col-md-4 mb-2">
                             <a href="{{ route('posyandu') }}" type="submit" class="btn btn-info text-white "><i
                                 class="tim-icons icon-minimal-left"></i> Kembali</a>
@@ -37,7 +48,8 @@
                                     <h2>Tambah Data</h2>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form action="{{ route('posyandu.create') }}" method="post">
+                                        @csrf
                                         <div class="row">
                                             <div class="col-md-5 pr-md-1">
                                                 <div class="form-group">
@@ -48,8 +60,8 @@
                                             </div>
                                             <div class="col-md-3 px-md-1">
                                                 <div class="form-group">
-                                                    <label for="posyandu">posyandu</label>
-                                                    <select name="posyandu" class="form-control">
+                                                    <label for="kode_posyandu">posyandu</label>
+                                                    <select name="kode_posyandu" class="form-control">
                                                         <option selected disabled>Pilih Kelompok Posyandu</option>
                                                         @if (isset($posyandu))
                                                             @foreach ($posyandu as $data)
@@ -62,8 +74,8 @@
                                             </div>
                                             <div class="col-md-4 pl-md-1">
                                                 <div class="form-group">
-                                                    <label for="dusun">Dusun</label>
-                                                    <select name="dusun" class="form-control">
+                                                    <label for="kode_dusun">Dusun</label>
+                                                    <select name="kode_dusun" class="form-control">
                                                         <option selected disabled>Pilih Dusun</option>
                                                         @if (isset($dusun))
                                                             @foreach ($dusun as $data)
@@ -85,8 +97,8 @@
                                             </div>
                                             <div class="col-md-6 pl-md-1">
                                                 <div class="form-group">
-                                                    <label for="ortu">Nama Ortu (Ibu)</label>
-                                                    <input name="ortu" type="text" class="form-control"
+                                                    <label for="nama_ortu">Nama Ortu (Ibu)</label>
+                                                    <input name="nama_ortu" type="text" class="form-control"
                                                         placeholder="Nama Ibu...">
                                                 </div>
                                             </div>
@@ -105,16 +117,16 @@
                                                 <div class="form-group">
                                                     <label>Jenis Kelamin</label>
                                                     <div class="form-check ml-3">
-                                                        <input class="form-check-input" type="radio" name="gender"
-                                                            id="male" value="male">
-                                                        <label class="form-check-label" for="male">
+                                                        <input class="form-check-input" type="radio" name="kelamin"
+                                                            id="L" value="L">
+                                                        <label class="form-check-label" for="L">
                                                             Laki-laki
                                                         </label>
                                                     </div>
                                                     <div class="form-check ml-3">
-                                                        <input class="form-check-input" type="radio" name="gender"
-                                                            id="female" value="female">
-                                                        <label class="form-check-label" for="female">
+                                                        <input class="form-check-input" type="radio" name="kelamin"
+                                                            id="P" value="P">
+                                                        <label class="form-check-label" for="P">
                                                             Perempuan
                                                         </label>
                                                     </div>
@@ -122,14 +134,14 @@
                                             </div>
                                             <div class="col-md-4 px-md-1">
                                                 <div class="form-group">
-                                                    <label for="tanggalLahir">Tanggal Lahir</label>
-                                                    <input name="tanggalLahir" type="date" class="form-control" name="dob">
+                                                    <label for="tanggal_lahir">Tanggal Lahir</label>
+                                                    <input name="tanggal_lahir" type="date" class="form-control" name="dob">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 pl-md-1">
                                                 <div class="form-group">
-                                                    <label for="usiaUkur">Usia Saat Ukur</label>
-                                                    <input name="usiaUkur" id="usiaUkur" type="number" class="form-control" placeholder="Usia Saat Ukur" disabled>
+                                                    <label for="usia_ukur">Usia Saat Ukur</label>
+                                                    <input name="usia_ukur" id="usia_ukur" type="number" class="form-control" placeholder="Usia Saat Ukur" disabled>
                                                 </div>
                                             </div>
                                         </div>

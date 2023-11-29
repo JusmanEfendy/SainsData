@@ -14,7 +14,7 @@ class Stunting extends Model
     protected $table = 'stunting';
     protected $primaryKey = 'id';
 
-    protected $fillable = ['nama', 'kelamin', 'tanggal_lahir', 'kode_posyandu', 'kode_dusun', 'usia_ukur'];
+    protected $fillable = ['nama', 'kelamin', 'nama_ortu', 'tanggal_lahir', 'kode_posyandu', 'kode_dusun', 'usia_ukur'];
 
     public function posyandu()
     {
