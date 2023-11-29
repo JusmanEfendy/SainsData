@@ -65,4 +65,33 @@ class PosyanduController extends Controller
 
         return view('admin.posyandu.edit', compact('title', 'datas', 'posyandu', 'dusun'));
     }
+
+    public function update(Request $request, string $id) 
+    {
+        $stunting = Stunting::findOrFail($id);
+        
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'kelamin' => 'required|in:L,P',
+            'tanggal_lahir' => 'required|date',
+            'nama_ortu' => 'required|string|max:255',
+            'kode_posyandu' => 'required|max:8',
+            'kode_dusun' => 'required|max:8',
+            'usia_ukur' => 'nullable'
+        ]);
+
+        $usia_ukur = Carbon::parse($request->tanggal_lahir)->diff(Carbon::now());
+
+        $stunting->update([
+            'nama' => $request->nama,
+            'kelamin' => $request->kelamin,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'nama_ortu' => $request->nama_ortu,
+            'kode_posyandu' => $request->kode_posyandu,
+            'kode_dusun' => $request->kode_dusun,
+            'usia_ukur' => $usia_ukur->format('%y Tahun - %m Bulan - %d Hari'),
+        ]);
+
+        return redirect()->route('posyandu')->with('success', 'Data Stunting berhasil diubah');
+    }
 }
