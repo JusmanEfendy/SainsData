@@ -50,11 +50,11 @@
                                                 <div class="form-group">
                                                     <label for="posyandu">posyandu</label>
                                                     <select name="posyandu" class="form-control">
-                                                        {{-- <option selected>{{ $datas->kode_posyandu }}</option> --}}
+                                                        <option class="text-dark" disabled>---Pilih Kelompok Posyandu---</option>
                                                         @if (isset($posyandu))
                                                             @foreach ($posyandu as $data)
                                                                 <option {{ $datas->kode_posyandu == $data->kode_posyandu ? 'selected' : '' }} class="text-dark" value="{{ $data->kode_posyandu }}">
-                                                                    {{ $data->kode_posyandu }}</option>
+                                                                    {{ $data->nama_posyandu }}</option>
                                                             @endforeach
                                                         @endif
                                                     </select>
@@ -64,10 +64,11 @@
                                                 <div class="form-group">
                                                     <label for="dusun">Dusun</label>
                                                     <select name="dusun" class="form-control">
+                                                        <option class="text-dark" disabled>---Pilih Dusun---</option>
                                                         @if (isset($dusun))
                                                             @foreach ($dusun as $data)
                                                                 <option {{ $datas->kode_dusun == $data->kode_dusun ? 'selected' : '' }} class="text-dark" value="{{ $data->kode_dusun }}">
-                                                                    {{ $data->kode_dusun }}</option>
+                                                                    {{ $data->nama_dusun }}</option>
                                                             @endforeach
                                                         @endif
                                                     </select>

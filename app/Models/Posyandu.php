@@ -15,4 +15,9 @@ class Posyandu extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = ['kode_posyandu', 'nama_posyandu'];
+
+    public function stunting() 
+    {
+        return $this->hasMany('App\Models\Stunting', 'kode_posyandu', 'kode_posyandu');
+    }
 }

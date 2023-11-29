@@ -16,4 +16,8 @@ class Dusun extends Model
 
     protected $fillable = ['kode_dusun', 'nama_dusun'];
 
+    public function stunting() 
+    {
+        return $this->hasMany('App\Models\Stunting', 'kode_dusun', 'kode_dusun');
+    }
 }
