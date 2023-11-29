@@ -10,8 +10,8 @@
             </a>
         </div>
         <ul class="nav">
-            <li class="{{ request()->is('admin-dashboard*') ? 'active' : '' }} ">
-                <a href="{{ route('admin-dashboard') }}">
+            <li class="{{ request()->is('dashboard*') ? 'active' : '' }} ">
+                <a href="{{ route('dashboard') }}">
                     <i class="tim-icons icon-chart-pie-36"></i>
                     <p>Dashboard</p>
                 </a>

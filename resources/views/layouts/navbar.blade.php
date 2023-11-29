@@ -9,7 +9,7 @@
                 </button>
             </div>
             <a class="navbar-brand"
-                href="{{ route('admin-dashboard') }}">{{ isset($navbarBrand) ? $navbarBrand : 'Dashboard' }}</a>
+                href="{{ route('dashboard') }}">{{ isset($navbarBrand) ? $navbarBrand : 'Dashboard' }}</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
             aria-expanded="false" aria-label="Toggle navigation">
