@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
     // POSYANDU
     Route::get('posyandu', [PosyanduController::class, 'index'])->name('posyandu');
     Route::get('posyandu/create', [PosyanduController::class, 'create'])->name('posyandu.create');
+    Route::post('posyandu/create', [PosyanduController::class, 'store'])->name('posyandu.create');
     Route::get('posyandu/edit/{id}', [PosyanduController::class, 'edit'])->name('posyandu.edit');
 });
 

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama');
             $table->enum('kelamin', ['L', 'P'])->default('L');
             $table->date('tanggal_lahir');
-            $table->string('nama_ortu')->nullable();
+            $table->string('nama_ortu');
             $table->string('kode_posyandu');
             $table->string('kode_dusun');
             $table->string('usia_ukur')->nullable();

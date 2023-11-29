@@ -132,7 +132,7 @@
                                                 <div class="form-group">
                                                     <label for="usiaUkur">Usia Saat Ukur</label>
                                                     <input name="usia_ukur" id="usiaUkur" type="text"
-                                                        class="form-control" placeholder="Usia Saat Ukur" value="{{ $usia_ukur->format('%y Tahun - %m Bulan - %d Hari') }}" disabled>
+                                                        class="form-control" placeholder="Usia Saat Ukur" value="{{ $datas->usia_ukur }}" disabled>
                                                 </div>
                                             </div>
                                         </div>
