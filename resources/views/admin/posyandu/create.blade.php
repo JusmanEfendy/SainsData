@@ -50,11 +50,11 @@
                                                 <div class="form-group">
                                                     <label for="posyandu">posyandu</label>
                                                     <select name="posyandu" class="form-control">
-                                                        <option selected>Pilih Kelompok Posyandu</option>
+                                                        <option selected disabled>Pilih Kelompok Posyandu</option>
                                                         @if (isset($posyandu))
                                                             @foreach ($posyandu as $data)
                                                                 <option class="text-dark" value="{{ $data->kode_posyandu }}">
-                                                                    {{ $data->kode_posyandu }}</option>
+                                                                    {{ $data->nama_posyandu }}</option>
                                                             @endforeach
                                                         @endif
                                                     </select>
@@ -64,11 +64,11 @@
                                                 <div class="form-group">
                                                     <label for="dusun">Dusun</label>
                                                     <select name="dusun" class="form-control">
-                                                        <option selected>Pilih Dusun</option>
+                                                        <option selected disabled>Pilih Dusun</option>
                                                         @if (isset($dusun))
                                                             @foreach ($dusun as $data)
                                                                 <option class="text-dark" value="{{ $data->kode_dusun }}">
-                                                                    {{ $data->kode_dusun }}</option>
+                                                                    {{ $data->nama_dusun }}</option>
                                                             @endforeach
                                                         @endif
                                                     </select>
@@ -80,7 +80,7 @@
                                                 <div class="form-group">
                                                     <label for="nama">Nama Balita</label>
                                                     <input type="text" name="nama" class="form-control"
-                                                        placeholder="Nama Lengkap...">
+                                                        placeholder="Nama Lengkap..." autofocus>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 pl-md-1">
@@ -94,7 +94,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="alamat">Alamat Lengkap</label>
+                                                    <label for="alamat">Alamat Lengkap (opsional)</label>
                                                     <input name="alamat" type="text" class="form-control"
                                                         placeholder="alamat lengkap..">
                                                 </div>

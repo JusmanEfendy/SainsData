@@ -68,13 +68,13 @@
                                                             {{ $data->nama }}
                                                         </td>
                                                         <td>
-                                                            {{ $data->kelamin }}
+                                                            {{ $data->kelamin === 'L' ? 'Laki-laki' : 'Perempuan'}}
                                                         </td>
                                                         <td>
                                                             {{ $data->tanggal_lahir }}
                                                         </td>
                                                         <td>
-                                                            {{ $data->kode_posyandu }}
+                                                            {{ $data->posyandu->nama_posyandu }}
                                                         </td>
                                                         <td class="text-center py-2">
                                                             <button data-target="#exampleModal" type="submit"
@@ -82,10 +82,10 @@
                                                                 class="btn btn-icon btn-round btnStunting"
                                                                 data-nama="{{ $data->nama }}"
                                                                 data-nama_ortu="{{ $data->nama_ortu }}"
-                                                                data-kelamin="{{ $data->kelamin }}"
+                                                                data-kelamin="{{ $data->kelamin === 'L' ? 'Laki-laki' : 'Perempuan' }}"
                                                                 data-tanggal_lahir="{{ $data->tanggal_lahir }}"
-                                                                data-dusun="{{ $data->kode_dusun }}"
-                                                                data-posyandu="{{ $data->kode_posyandu }}"
+                                                                data-dusun="{{ $data->dusun->nama_dusun }}"
+                                                                data-posyandu="{{ $data->posyandu->nama_posyandu }}"
                                                                 data-usia_ukur="{{ $data->usia_ukur }}">
                                                                 <i class="tim-icons icon-alert-circle-exc"></i>
                                                             </button>
@@ -126,24 +126,6 @@
                                                         </div>
                                                         <div class="row mb-2">
                                                             <div class="col-6">
-                                                                <b>Nama Ibu</b>
-                                                            </div>
-                                                            <div class="col-6" id="namaOrtu"></div>
-                                                        </div>
-                                                        <div class="row mb-2">
-                                                            <div class="col-6">
-                                                                <b>Kelompok Posyandu</b>
-                                                            </div>
-                                                            <div class="col-6" id="posyandu"></div>
-                                                        </div>
-                                                        <div class="row mb-2">
-                                                            <div class="col-6">
-                                                                <b>Dusun</b>
-                                                            </div>
-                                                            <div class="col-6" id="dusun"></div>
-                                                        </div>
-                                                        <div class="row mb-2">
-                                                            <div class="col-6">
                                                                 <b>Tanggal Lahir</b>
                                                             </div>
                                                             <div class="col-6" id="tanggalLahir"></div>
@@ -159,6 +141,25 @@
                                                                 <b>Usia Saat Ukur</b>
                                                             </div>
                                                             <div class="col-6" id="usiaUkur"></div>
+                                                        </div>
+                                                        <div class="dropdown-divider"></div>
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <b>Nama Ibu</b>
+                                                            </div>
+                                                            <div class="col-6" id="namaOrtu"></div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <b>Dusun</b>
+                                                            </div>
+                                                            <div class="col-6" id="dusun"></div>
+                                                        </div>
+                                                        <div class="row mb-2">
+                                                            <div class="col-6">
+                                                                <b>Kelompok Posyandu</b>
+                                                            </div>
+                                                            <div class="col-6" id="posyandu"></div>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
@@ -231,17 +232,6 @@
         $(".btnStunting").on("click", function(e) {
             e.preventDefault()
 
-            let jenisKelamin = $(this).data('kelamin');
-            let ubahValue = ''
-
-            if (jenisKelamin === 'L') {
-                ubahValue = 'Laki-laki';
-            } else if (jenisKelamin === 'P') {
-                ubahValue = 'Perempuan';
-            } else {
-                ubahValue = 'Tidak diketahui';
-            }
-
             $('#namaBalita').text($(this).data('nama'))
 
             $('#namaOrtu').text($(this).data('nama_ortu'))
@@ -252,7 +242,7 @@
 
             $('#tanggalLahir').text($(this).data('tanggal_lahir'))
 
-            $('#jenisKelamin').text(ubahValue)
+            $('#jenisKelamin').text($(this).data('kelamin'))
 
             $('#usiaUkur').text($(this).data('usia_ukur'))
         })

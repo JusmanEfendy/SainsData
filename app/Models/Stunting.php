@@ -15,4 +15,14 @@ class Stunting extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = ['nama', 'kelamin', 'tanggal_lahir', 'kode_posyandu', 'kode_dusun', 'usia_ukur'];
+
+    public function posyandu()
+    {
+        return $this->belongsTo('App\Models\Posyandu', 'kode_posyandu', 'kode_posyandu');
+    }
+    
+    public function dusun()
+    {
+        return $this->belongsTo('App\Models\Dusun', 'kode_dusun', 'kode_dusun');
+    }
 }
