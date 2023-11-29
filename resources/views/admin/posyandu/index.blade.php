@@ -104,9 +104,13 @@
                                                                 class="btn btn-icon btn-round">
                                                                 <i class="tim-icons icon-pencil"></i>
                                                             </button>
-                                                            <form class="d-inline" action="">
+                                                            <form class="d-inline"
+                                                                action="{{ route('posyandu.delete', $data->id) }}"
+                                                                method="post">
                                                                 @csrf
-                                                                <button type="submit" class="btn btn-icon btn-round">
+                                                                @method('DELETE')
+                                                                <button type="submit"
+                                                                    class="btn btn-icon btn-round delete" data-nama="{{ $data->nama }}">
                                                                     <i class="tim-icons icon-trash-simple"></i>
                                                                 </button>
                                                             </form>
@@ -237,6 +241,37 @@
     </div>
     <!--   Core JS Files   -->
     @include('layouts.script')
+
+    <script>
+        $(".delete").on("click", function(e) {
+            e.preventDefault()
+            // alert("Handler for `click` called.");
+            const nama = $(this).data('nama')
+            let button = $(this)
+            let form = button.parent('form')
+            let ok = false
+            Swal.fire({
+                title: 'Apakah anda yakin ingin menghapus?',
+                text: `${nama} akan dihapus permanent`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Iya, Hapus!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    ok = true; // Setel ok ke true jika pengguna mengklik "Yes"
+                    form.submit(); // Kirim formulir
+
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                }
+            });
+        })
+    </script>
 
     <script>
         $(".btnStunting").on("click", function(e) {

@@ -38,6 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/posyandu/create', [PosyanduController::class, 'store'])->name('posyandu.create');
     Route::get('/posyandu/edit/{id}', [PosyanduController::class, 'edit'])->name('posyandu.edit');
     Route::patch('/posyandu/edit/{id}', [PosyanduController::class, 'update'])->name('posyandu.update');
+    Route::delete('/posyandu/delete/{id}', [PosyanduController::class, 'destroy'])->name('posyandu.delete');
 });
 
 require __DIR__.'/auth.php';
