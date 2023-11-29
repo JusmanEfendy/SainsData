@@ -29,31 +29,27 @@
                     <div class="row">
                         <div class="col-md-12">
                             @if ($errors->any())
-                            <div class="alert alert-danger " data-notify="container">
-                                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                                  <i class="tim-icons icon-simple-remove"></i>
-                                </button>
-                                <span data-notify="icon" class="tim-icons icon-alert-circle-exc"></span>
-                                <span data-notify="message">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li style="list-style: none"><i class="tim-icons icon-simple-remove"></i> {{ $error }} (wajib isi)</li>
-                                        @endforeach
-                                    </ul>
-                                </span>
-                              </div>
-                            {{-- <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li style="list-style: none"><i class="tim-icons icon-alert-circle-exc"></i> {{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div> --}}
-                        @endif
+                                <div class="alert alert-danger " data-notify="container">
+                                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert"
+                                        aria-label="Close">
+                                        <i class="tim-icons icon-simple-remove"></i>
+                                    </button>
+                                    <span data-notify="icon" class="tim-icons icon-alert-circle-exc"></span>
+                                    <span data-notify="message">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li style="list-style: none"><i
+                                                        class="tim-icons icon-simple-remove"></i> {{ $error }}
+                                                    (wajib isi)</li>
+                                            @endforeach
+                                        </ul>
+                                    </span>
+                                </div>
+                            @endif
                         </div>
                         <div class="col-md-4 mb-2">
                             <a href="{{ route('posyandu') }}" type="submit" class="btn btn-info text-white "><i
-                                class="tim-icons icon-minimal-left"></i> Kembali</a>
+                                    class="tim-icons icon-minimal-left"></i> Kembali</a>
                         </div>
                         <div class="col-md-12">
                             <div class="card">
@@ -78,7 +74,8 @@
                                                         <option selected disabled>Pilih Kelompok Posyandu</option>
                                                         @if (isset($posyandu))
                                                             @foreach ($posyandu as $data)
-                                                                <option class="text-dark" value="{{ $data->kode_posyandu }}">
+                                                                <option class="text-dark"
+                                                                    value="{{ $data->kode_posyandu }}">
                                                                     {{ $data->nama_posyandu }}</option>
                                                             @endforeach
                                                         @endif
@@ -92,7 +89,8 @@
                                                         <option selected disabled>Pilih Dusun</option>
                                                         @if (isset($dusun))
                                                             @foreach ($dusun as $data)
-                                                                <option class="text-dark" value="{{ $data->kode_dusun }}">
+                                                                <option class="text-dark"
+                                                                    value="{{ $data->kode_dusun }}">
                                                                     {{ $data->nama_dusun }}</option>
                                                             @endforeach
                                                         @endif
@@ -148,18 +146,21 @@
                                             <div class="col-md-4 px-md-1">
                                                 <div class="form-group">
                                                     <label for="tanggal_lahir">Tanggal Lahir</label>
-                                                    <input name="tanggal_lahir" type="date" class="form-control" name="dob">
+                                                    <input name="tanggal_lahir" type="date" class="form-control"
+                                                        name="dob">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 pl-md-1">
                                                 <div class="form-group">
                                                     <label for="usia_ukur">Usia Saat Ukur</label>
-                                                    <input name="usia_ukur" id="usia_ukur" type="number" class="form-control" placeholder="Usia Saat Ukur" disabled>
+                                                    <input name="usia_ukur" id="usia_ukur" type="number"
+                                                        class="form-control" placeholder="Usia Saat Ukur" disabled>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="card-footer">
-                                            <button type="submit" class="btn btn-fill btn-primary"><i class="tim-icons icon-notes"></i> Save</button>
+                                            <button type="submit" class="btn btn-fill btn-primary"><i
+                                                    class="tim-icons icon-notes"></i> Save</button>
                                         </div>
                                     </form>
                                 </div>

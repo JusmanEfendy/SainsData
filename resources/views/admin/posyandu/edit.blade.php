@@ -27,6 +27,26 @@
             <div class="content">
                 <div class="container">
                     <div class="row">
+                        <div class="col-md-12">
+                            @if ($errors->any())
+                                <div class="alert alert-danger " data-notify="container">
+                                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert"
+                                        aria-label="Close">
+                                        <i class="tim-icons icon-simple-remove"></i>
+                                    </button>
+                                    <span data-notify="icon" class="tim-icons icon-alert-circle-exc"></span>
+                                    <span data-notify="message">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li style="list-style: none"><i
+                                                        class="tim-icons icon-simple-remove"></i> {{ $error }}
+                                                    (wajib isi)</li>
+                                            @endforeach
+                                        </ul>
+                                    </span>
+                                </div>
+                            @endif
+                        </div>
                         <div class="col-md-4 mb-2">
                             <a href="{{ route('posyandu') }}" type="submit" class="btn btn-info text-white "><i
                                 class="tim-icons icon-minimal-left"></i> Kembali</a>
@@ -37,7 +57,9 @@
                                     <h2>Edit Data</h2>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form method="post" action="{{ route('posyandu.update', $datas->id) }}">
+                                        @csrf
+                                        @method('PATCH')
                                         <div class="row">
                                             <div class="col-md-5 pr-md-1">
                                                 <div class="form-group">
@@ -48,8 +70,8 @@
                                             </div>
                                             <div class="col-md-3 px-md-1">
                                                 <div class="form-group">
-                                                    <label for="posyandu">posyandu</label>
-                                                    <select name="posyandu" class="form-control">
+                                                    <label for="kode_posyandu">posyandu</label>
+                                                    <select name="kode_posyandu" class="form-control">
                                                         <option class="text-dark" disabled>---Pilih Kelompok Posyandu---</option>
                                                         @if (isset($posyandu))
                                                             @foreach ($posyandu as $data)
@@ -62,8 +84,8 @@
                                             </div>
                                             <div class="col-md-4 pl-md-1">
                                                 <div class="form-group">
-                                                    <label for="dusun">Dusun</label>
-                                                    <select name="dusun" class="form-control">
+                                                    <label for="kode_dusun">Dusun</label>
+                                                    <select name="kode_dusun" class="form-control">
                                                         <option class="text-dark" disabled>---Pilih Dusun---</option>
                                                         @if (isset($dusun))
                                                             @foreach ($dusun as $data)
@@ -86,8 +108,8 @@
                                             </div>
                                             <div class="col-md-6 pl-md-1">
                                                 <div class="form-group">
-                                                    <label for="ortu">Nama Ortu (Ibu)</label>
-                                                    <input name="ortu" type="text" class="form-control"
+                                                    <label for="nama_ortu">Nama Ortu (Ibu)</label>
+                                                    <input name="nama_ortu" type="text" class="form-control"
                                                         placeholder="Nama Ibu..." value="{{ $datas->nama_ortu }}">
                                                 </div>
                                             </div>
@@ -114,8 +136,8 @@
                                                     </div>
                                                     <div class="form-check ml-3">
                                                         <input class="form-check-input" type="radio" name="kelamin"
-                                                            id="female" value="P" {{ $datas->kelamin == 'P' ? 'checked' : '' }}>
-                                                        <label class="form-check-label" for="female">
+                                                            id="P" value="P" {{ $datas->kelamin == 'P' ? 'checked' : '' }}>
+                                                        <label class="form-check-label" for="P">
                                                             Perempuan
                                                         </label>
                                                     </div>
@@ -130,7 +152,7 @@
                                             </div>
                                             <div class="col-md-4 pl-md-1">
                                                 <div class="form-group">
-                                                    <label for="usiaUkur">Usia Saat Ukur</label>
+                                                    <label for="usia_ukur">Usia Saat Ukur</label>
                                                     <input name="usia_ukur" id="usiaUkur" type="text"
                                                         class="form-control" placeholder="Usia Saat Ukur" value="{{ $datas->usia_ukur }}" disabled>
                                                 </div>

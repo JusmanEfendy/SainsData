@@ -33,10 +33,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // POSYANDU
-    Route::get('posyandu', [PosyanduController::class, 'index'])->name('posyandu');
-    Route::get('posyandu/create', [PosyanduController::class, 'create'])->name('posyandu.create');
-    Route::post('posyandu/create', [PosyanduController::class, 'store'])->name('posyandu.create');
-    Route::get('posyandu/edit/{id}', [PosyanduController::class, 'edit'])->name('posyandu.edit');
+    Route::get('/posyandu', [PosyanduController::class, 'index'])->name('posyandu');
+    Route::get('/posyandu/create', [PosyanduController::class, 'create'])->name('posyandu.create');
+    Route::post('/posyandu/create', [PosyanduController::class, 'store'])->name('posyandu.create');
+    Route::get('/posyandu/edit/{id}', [PosyanduController::class, 'edit'])->name('posyandu.edit');
+    Route::patch('/posyandu/edit/{id}', [PosyanduController::class, 'update'])->name('posyandu.update');
 });
 
 require __DIR__.'/auth.php';
