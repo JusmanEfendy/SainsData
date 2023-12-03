@@ -55,10 +55,10 @@
                                                         Nama
                                                     </th>
                                                     <th>
-                                                        JK
+                                                        Jenis Kelamin
                                                     </th>
                                                     <th>
-                                                        Tgl Lahir
+                                                        Tanggal Lahir
                                                     </th>
                                                     <th>
                                                         Posyandu
@@ -245,7 +245,7 @@
     <script>
         $(".delete").on("click", function(e) {
             e.preventDefault()
-            // alert("Handler for `click` called.");
+            
             const nama = $(this).data('nama')
             let button = $(this)
             let form = button.parent('form')
