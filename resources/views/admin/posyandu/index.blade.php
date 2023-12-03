@@ -81,7 +81,7 @@
                                                 @foreach ($datas as $i => $data)
                                                     <tr>
                                                         <td>
-                                                            {{ ++$i }}
+                                                            {{ $i + $datas->firstItem() }}
                                                         </td>
                                                         <td>
                                                             {{ $data->nama }}
@@ -193,6 +193,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="card-footer clearfix d-flex justify-content-end">
+                                    {{ $datas->links() }}
                                 </div>
                             </div>
                         </div>
