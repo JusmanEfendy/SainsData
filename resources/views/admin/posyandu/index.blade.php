@@ -26,6 +26,17 @@
             <div class="content">
                 <div class="container">
                     <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <a href="{{ route('posyandu.create') }}" class="btn btn-fill btn-primary">Add data +</a>
+                        </div>
+                        <div class="col-md-6">
+                            <form class="d-flex" action="{{ route('posyandu') }}" method="GET">
+                                <input class="form-control me-2 mx-2 mt-1" type="search" placeholder="Search" id="search" name="search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit"><i
+                                    class="tim-icons icon-zoom-split"></i>
+                            </button>
+                            </form>
+                        </div>
                         <div class="col-md-12">
                             @if (session('success'))
                                 <div class="alert alert-success alert-with-icon" data-notify="container">
@@ -40,8 +51,6 @@
                             <div class="card ">
                                 <div class="card-header">
                                     <h4 class="card-title"> Tabel Stunting</h4>
-                                    <a href="{{ route('posyandu.create') }}" class="btn btn-fill btn-primary">Add data
-                                        +</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
