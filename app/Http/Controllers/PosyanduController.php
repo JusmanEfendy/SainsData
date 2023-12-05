@@ -10,10 +10,19 @@ use Illuminate\Http\Request;
 
 class PosyanduController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $title = 'Data stunting';
-        $datas = Stunting::orderBy('id', 'desc')->paginate(5);
+        
+        if($request->has('search')) {
+            $searchTerm = $request->search;
+
+            $datas = Stunting::where('nama', 'LIKE', '%' .$request->search. '%')->orWhereHas('dusun', function ($query) use ($searchTerm) {
+                $query->where('nama_dusun', 'LIKE', '%' . $searchTerm . '%');
+            })->orWhere('nama_ortu', 'LIKE', '%' . $request->search . '%')->paginate(5);
+        }else {
+            $datas = Stunting::orderBy('nama', 'asc')->paginate(5);
+        }
         return view('admin.posyandu.index', compact('title', 'datas'));
 
     }
