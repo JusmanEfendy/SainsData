@@ -31,7 +31,8 @@
                         </div>
                         <div class="col-md-6">
                             <form class="d-flex" action="{{ route('posyandu') }}" method="GET">
-                                <input class="form-control me-2 mx-2 mt-1" type="search" placeholder="Search" id="search" name="search" aria-label="Search">
+                                @csrf
+                                <input class="form-control me-2 mx-2 mt-1" type="search" placeholder="Search: Nama/Dusun/Nama Ibu ..." id="search" name="search" aria-label="Search">
                                 <button class="btn btn-outline-success" type="submit"><i
                                     class="tim-icons icon-zoom-split"></i>
                             </button>
