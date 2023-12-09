@@ -38,6 +38,7 @@
             @endif
         @endauth
     @endif
+          <a id="hamburger-menu" href="#"><i class="fa fa-bars"></i></a>
 </div>
     </nav>
     <!-- Navbar end -->
@@ -113,6 +114,6 @@
 
 
 
-    <script src={{asset('js/scripts.css')}}></script>
+    <script src={{asset('js/scripts.js')}}></script>
   </body>
 </html>
