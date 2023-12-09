@@ -33,9 +33,6 @@
             <a href="{{ url('/dashboard') }}"><i class="fa-dashboard"></i> Dashboard</a>
         @else
             <a href="{{ route('login') }}"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}"><i class="fa-solid fa-user-plus"></i> Register</a>
-            @endif
         @endauth
     @endif
           <a id="hamburger-menu" href="#"><i class="fa fa-bars"></i></a>
