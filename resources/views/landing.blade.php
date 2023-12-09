@@ -55,14 +55,14 @@
 <!-- Container Start -->
 <div class="sect-container">
   <!-- About Section Start -->
-  <section id="about">
+  <section class="about" id="about">
     <h2>About Us</h2>
     <p>Aplikasi ini dibuat untuk memenuhi tugas project matakuliah Sains Data</p>
   </section>
   <!-- About Section End -->
 
   <!-- Team Section Start -->
-  <section id="team">
+  <section class="teams" id="team">
     <h2>Meet Our Team</h2>
     <div class="team-member">
       <img src="https://dummyimage.com/100x100/000/fff&text=Placeholder" alt="Team Member 1">
