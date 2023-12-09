@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\PosyanduChart;
+use App\Models\Posyandu;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function index(PosyanduChart $posyanduChart)
     {
         $title = 'Dashboard';
-        return view('admin.dashboard', compact('title'));
+
+        $kelompokPosyandu = Posyandu::get();
+        // dd($kelompokPosyandu);
+        $posyanduChart = $posyanduChart->build();
+        return view('admin.dashboard', compact('title', 'posyanduChart', 'kelompokPosyandu'));
     }
 }
