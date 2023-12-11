@@ -30,7 +30,7 @@
 <div class="navbar-left">
     @if (Route::has('login'))
         @auth
-            <a href="{{ url('/dashboard') }}"><i class="fa-dashboard"></i> Dashboard</a>
+            <a href="{{ url('/dashboard') }}"><i class="fa-solid fa-door-open"></i> Dashboard</a>
         @else
             <a href="{{ route('login') }}"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
         @endauth
