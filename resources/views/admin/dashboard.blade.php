@@ -8,7 +8,7 @@
         <div class="main-panel">
             <!-- Navbar -->
             @include('layouts.navbar')
-            
+
             <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog"
                 aria-labelledby="searchModal" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -54,7 +54,9 @@
                             </div>
                             <div class="card-body">
                                 <div class="chart-area">
-                                    <canvas id="chartLinePurple"></canvas>
+                                         <div class="">
+                                        {!! $pasienBulananChart->container() !!}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +72,7 @@
                                     <div class="">
                                         {!! $posyanduChart->container() !!}
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
