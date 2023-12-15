@@ -21,7 +21,7 @@ class PosyanduChart
         $kelompok = Posyandu::get();
         $labels = [];
         $data = [];
-
+        // dd($balita);
         foreach($kelompok as $datas) {
             $labels[] = $datas->nama_posyandu;
             $data[] = $balita->where('kode_posyandu', $datas->kode_posyandu)->count();

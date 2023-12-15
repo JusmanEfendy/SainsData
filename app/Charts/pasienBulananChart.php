@@ -18,14 +18,23 @@ class pasienBulananChart
 
     public function build(): \ArielMejiaDev\LarapexCharts\LineChart
     {
-        $data[] = Stunting::get();
-        $bulan[] = Stunting::select('created_at')->get()->groupBy('created_at');
-        foreach($data as $datas) {
-            $data[]=$datas->created_at->count();
-            $bulan[]=$bulan;
-        }
+        // $stunting = Stunting::get();
+        // $created_at = Stunting::select('created_at')->get()->groupBy('created_at');
+        // $data = [];
+        // $bulan = [];
+        // foreach($stunting as $datas) {
+        //     $data[] = $datas->count();
+        //     $bulan[] = $created_at;
+        // }
+
         return $this->chart->lineChart()
-                ->addData('data', [$data])
-                ->setXAxis($bulan);
-    }
+        ->setTitle('Sales during 2021.')
+        ->setSubtitle('Physical sales vs Digital sales.')
+        ->addData('Physical sales', [40, 93, 35, 42, 18, 82])
+        ->addData('Digital sales', [70, 29, 77, 28, 55, 45])
+        ->setFontColor('#FFF')
+        // ->setWidth(250)
+        // ->setHeight(250)
+        ->setXAxis(['January', 'February', 'March', 'April', 'May', 'June']);
+        }
 }

@@ -14,9 +14,10 @@ class DashboardController extends Controller
         $title = 'Dashboard';
 
         $kelompokPosyandu = Posyandu::get();
-        // dd($kelompokPosyandu);
+
         $posyanduChart = $posyanduChart->build();
         $pasienBulananChart = $pasienBulananChart->build();
+        
         return view('admin.dashboard', compact('title', 'posyanduChart', 'kelompokPosyandu', 'pasienBulananChart'));
     }
 }
