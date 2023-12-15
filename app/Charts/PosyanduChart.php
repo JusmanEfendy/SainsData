@@ -29,6 +29,7 @@ class PosyanduChart
 
         return $this->chart->pieChart()
             ->addData($data)
-            ->setLabels($labels);
+            ->setLabels($labels)
+            ->setFontColor('#FFF');
     }
 }
