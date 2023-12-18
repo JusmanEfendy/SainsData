@@ -20,7 +20,7 @@ class Stunting extends Model
     {
         return $this->belongsTo('App\Models\Posyandu', 'kode_posyandu', 'kode_posyandu');
     }
-    
+
     public function dusun()
     {
         return $this->belongsTo('App\Models\Dusun', 'kode_dusun', 'kode_dusun');
