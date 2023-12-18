@@ -31,6 +31,7 @@ class pasienBulananChart
                 ->addData('data', $data)
                 ->setXaxis($months)
                 ->setTitle('Pasien Bulanan')
-                ->setFontColor('#FFF');
+                ->setFontColor('#FFF')
+                ->setLabels($months);
     }
 }
