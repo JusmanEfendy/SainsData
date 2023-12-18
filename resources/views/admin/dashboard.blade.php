@@ -32,13 +32,15 @@
                                 <div class="row">
                                     <div class="col-sm-6 text-left">
                                         <h5 class="card-category">Total Shipments</h5>
-                                        <h2 class="card-title">Performance</h2>
+                                        <h2 class="card-title">Grafik Pasien</h2>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div class="chart-area">
-                                    <canvas id="chartBig1"></canvas>
+                                         <div class="">
+                                        {!! $pasienBulananChart->container() !!}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -54,9 +56,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="chart-area">
-                                         <div class="">
-                                        {!! $pasienBulananChart->container() !!}
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -147,8 +147,10 @@
     @include('layouts.script')
 
     <script src="{{ $posyanduChart->cdn() }}"></script>
+    <script src="{{ $pasienBulananChart->cdn() }}"></script>
 
     {{ $posyanduChart->script() }}
+    {{ $pasienBulananChart->script() }}
 </body>
 
 </html>

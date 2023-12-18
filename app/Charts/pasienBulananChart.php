@@ -18,14 +18,19 @@ class pasienBulananChart
 
     public function build(): \ArielMejiaDev\LarapexCharts\LineChart
     {
-        $data[] = Stunting::get();
-        $bulan[] = Stunting::select('created_at')->get()->groupBy('created_at');
-        foreach($data as $datas) {
-            $data[]=$datas->created_at->count();
-            $bulan[]=$bulan;
+        $pasien = Stunting::get();
+        $data = [];
+        $months = [];
+
+        foreach($pasien as $datas) {
+
+        $data[] = $datas->count();
+        $months[] = $datas->created_at->format('M');
         }
         return $this->chart->lineChart()
-                ->addData('data', [$data])
-                ->setXAxis($bulan);
+                ->addData('data', $data)
+                ->setXaxis($months)
+                ->setTitle('Pasien Bulanan')
+                ->setFontColor('#FFF');
     }
 }
