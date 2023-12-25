@@ -56,7 +56,9 @@
                             </div>
                             <div class="card-body">
                                 <div class="chart-area">
-
+                                         <div class="">
+                                        {!! $kelaminChart->container() !!}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -147,9 +149,11 @@
     @include('layouts.script')
 
     <script src="{{ $posyanduChart->cdn() }}"></script>
+    <script src="{{ $kelaminChart->cdn() }}"></script>
     <script src="{{ $pasienBulananChart->cdn() }}"></script>
 
     {{ $posyanduChart->script() }}
+    {{ $kelaminChart->script() }}
     {{ $pasienBulananChart->script() }}
 </body>
 
