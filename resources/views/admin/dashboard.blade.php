@@ -92,6 +92,14 @@
                 </div>
             </div>
 
+            <div class="content">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>section (buat kesimpulan disini)</h1>
+                    </div>
+                </div>
+            </div>
+
             @include('layouts.footer')
 
         </div>
