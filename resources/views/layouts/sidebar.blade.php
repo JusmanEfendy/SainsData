@@ -22,6 +22,12 @@
                     <p>Data Posyandu</p>
                 </a>
             </li>
+            <li class="{{ request()->is('posyandu*') ? 'active' : '' }} ">
+                <a href="{{ route('posyandu') }}">
+                    <i class="tim-icons icon-notes"></i>
+                    <p>Kesimpulan</p>
+                </a>
+            </li>
         </ul>
     </div>
 </div>
