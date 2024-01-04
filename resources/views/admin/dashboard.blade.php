@@ -31,7 +31,7 @@
                             <div class="card-header ">
                                 <div class="row">
                                     <div class="col-sm-6 text-left">
-                                        <h5 class="card-category">Total Shipments</h5>
+                                        <h5 class="card-category">Linechart pasien</h5>
                                         <h2 class="card-title">Grafik Pasien</h2>
                                     </div>
                                 </div>
@@ -50,8 +50,8 @@
                     <div class="col-md-4">
                         <div class="card card-chart">
                             <div class="card-header">
-                                <h5 class="card-category">Total Shipments</h5>
-                                <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i> 763,215
+                                <h5 class="card-category">Bar chart perbandingan gneder</h5>
+                                <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i> Bar chart
                                 </h3>
                             </div>
                             <div class="card-body">
@@ -77,28 +77,13 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card card-chart">
-                            <div class="card-header">
-                                <h5 class="card-category">Completed Tasks</h5>
-                                <h3 class="card-title"><i class="tim-icons icon-send text-success"></i> 12,100K</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="chart-area">
-                                    <canvas id="chartLineGreen"></canvas>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="content">
-                <div class="row">
-                    <div class="col-12">
-                        <h1>section (buat kesimpulan disini)</h1>
-                    </div>
-                </div>
-            </div>
+
 
             @include('layouts.footer')
 

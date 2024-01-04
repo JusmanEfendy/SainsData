@@ -30,7 +30,7 @@
 <div class="navbar-left">
     @if (Route::has('login'))
         @auth
-            <a href="{{ url('/dashboard') }}"><i class="fa-dashboard"></i> Dashboard</a>
+            <a href="{{ url('/dashboard') }}"><i class="fa-solid fa-user"></i> Dashboard</a>
         @else
             <a href="{{ route('login') }}"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
         @endauth
@@ -64,27 +64,32 @@
     <div class="team-member">
       <img src="https://dummyimage.com/100x100/000/fff&text=Placeholder" alt="Team Member 1">
       <h3>Wulandari</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quod tempora eos, earum facere cum veniam odit rem eum, quidem ab autem tenetur unde fugiat alias cupiditate nostrum rerum placeat.</p>
+     <p>| 20.01.013.019</p>
     </div>
     <div class="team-member">
       <img src="https://dummyimage.com/100x100/000/fff&text=Placeholder" alt="Team Member 1">
       <h3>Jusman Efendi</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quod tempora eos, earum facere cum veniam odit rem eum, quidem ab autem tenetur unde fugiat alias cupiditate nostrum rerum placeat.</p>
+      <p>| 20.01.013.060</p>
     </div>
     <div class="team-member">
       <img src="https://dummyimage.com/100x100/000/fff&text=Placeholder" alt="Team Member 1">
       <h3>M. Alif Aldiansyah</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quod tempora eos, earum facere cum veniam odit rem eum, quidem ab autem tenetur unde fugiat alias cupiditate nostrum rerum placeat.</p>
+      <p>| 20.01.013.066</p>
     </div>
     <div class="team-member">
       <img src="https://dummyimage.com/100x100/000/fff&text=Placeholder" alt="Team Member 1">
       <h3>Sulastri</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quod tempora eos, earum facere cum veniam odit rem eum, quidem ab autem tenetur unde fugiat alias cupiditate nostrum rerum placeat.</p>
+      <p>| 20.01.013.015</p>
     </div>
     <div class="team-member">
       <img src="https://dummyimage.com/100x100/000/fff&text=Placeholder" alt="Team Member 1">
       <h3>Andini Wulandari</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quod tempora eos, earum facere cum veniam odit rem eum, quidem ab autem tenetur unde fugiat alias cupiditate nostrum rerum placeat.</p>
+      <p>| 20.01.013.020</p>
+    </div>
+    <div class="team-member">
+      <img src="https://dummyimage.com/100x100/000/fff&text=Placeholder" alt="Team Member 1">
+      <h3>Jufriadi</h3>
+      <p>| 20.01.013.007</p>
     </div>
     <!-- Add more team members as needed -->
   </section>

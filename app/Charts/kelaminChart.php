@@ -25,7 +25,6 @@ class kelaminChart
         return $this->chart->barChart()
             ->addData('Perempuan', [$perempuan])
             ->addData('Laki-Laki', [$laki])
-            ->setTitle('Diagram gender pasien')
             ->setXAxis(['Banyaknya gender'])
             ->setFontColor('#FFF');
 
