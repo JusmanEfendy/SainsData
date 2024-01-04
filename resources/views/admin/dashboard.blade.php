@@ -37,11 +37,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div class="chart-area">
-                                    <div class="">
-                                        {!! $pasienBulananChart->container() !!}
-                                    </div>
-                                </div>
+                                {!! $pasienBulananChart->container() !!}
                             </div>
                         </div>
                     </div>
@@ -78,16 +74,16 @@
                     </div>
                     <div class="col-md-4">
 
-                        </div>
                     </div>
                 </div>
             </div>
-
-
-
-            @include('layouts.footer')
-
         </div>
+
+
+
+        @include('layouts.footer')
+
+    </div>
     </div>
     <div class="fixed-plugin">
         <div class="dropdown show-dropdown">
