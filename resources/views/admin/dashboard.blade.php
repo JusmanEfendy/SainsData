@@ -30,9 +30,9 @@
                         <div class="card card-chart">
                             <div class="card-header ">
                                 <div class="row">
-                                    <div class="col-sm-6 text-left">
+                                    <div class="col-sm-12 text-left">
                                         <h5 class="card-category">Linechart pasien</h5>
-                                        <h2 class="card-title">Grafik Pasien</h2>
+                                        <h2 class="card-title text-center">Grafik Balita </h2>
                                     </div>
                                 </div>
                             </div>
@@ -67,13 +67,9 @@
                                     <div class="">
                                         {!! $posyanduChart->container() !!}
                                     </div>
-
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-
                     </div>
                 </div>
             </div>
